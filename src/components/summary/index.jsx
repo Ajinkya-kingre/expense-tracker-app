@@ -1,6 +1,8 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import TransactionForm from "../add-transaction";
+import TransactionChart from "../charts";
 
-export default function Summary() {
+export default function Summary({ onClose, isOpen }) {
   return (
     <Box
       p={"6"}
@@ -64,7 +66,7 @@ export default function Summary() {
             </Flex>
           </Flex>
         </Flex>
-        
+
         <Box
           flex={1}
           mt={"10"}
@@ -76,9 +78,12 @@ export default function Summary() {
           alignItems={"center"}
           justifyContent={"center"}
         >
-          <Heading>Chart</Heading>
+          <Heading>
+            <TransactionChart expense={100} income={1000} />
+          </Heading>
         </Box>
       </Flex>
+      <TransactionForm onClose={onClose} isOpen={isOpen} />
     </Box>
   );
 }
