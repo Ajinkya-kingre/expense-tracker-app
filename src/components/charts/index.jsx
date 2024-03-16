@@ -2,7 +2,7 @@ import Chart from "react-apexcharts";
 
 const options = {
   labels: ["Income", "Expense"],
-  colors: ["#213ebf", "#FD5E53"],
+  colors: ["#213ebf","#FD5E53"],
   chart: {
     width: "50px",
   },
@@ -31,7 +31,7 @@ const options = {
     },
   },
   fill: {
-    colors: ["#213ebf", "#FD5E53"],
+    colors: ["#213ebf","#FD5E53"],
   },
   tooltip: {
     enabled: true,
@@ -43,7 +43,8 @@ const options = {
     },
   },
 };
-export default function TransactionChart({ expense = 100, income = 100 }) {
+
+export default function TransactionChartSummary({expense = 100, income = 100}) {
   return (
     <Chart
       options={options}
